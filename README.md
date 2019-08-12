@@ -7,6 +7,8 @@ The goal with this project is to use an Arduino to control the PSU. Ideally you 
 # How
 The PSU has an i2c port through which it reports status and takes commands. It contains two devices that responds on the i2c bus, the EEPROM and the PIC micro processor. 
 
+<pinout/connection goes here>
+
 ## EEPROM
 First the EEPROM that stores various permanent data such as manufacturer and serial number. This is of limited use to us, but can be used as "vanity data" to display which kind of PSU we are connected to. There may be some settings data, or alarm logs here, I have yet to check that. The MCU has it's own EEPROM to store various values as well.
 
@@ -48,7 +50,10 @@ The EEPROM is writable from the i2c bus.
 0xF8: 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 ........
 ```
 
+#Commands
+The MCU responds to i2c commands/registers. The challenge is to figure out which commands do what. According to http://colintd.blogspot.com/2016/10/hacking-hp-common-slot-power-supplies.html the PSU should be communicating according to the PMbus protocol. With some effort I was able to find some specs of the protocol in datasheets. This one is probably the most readable: https://www.components-mart.com/datasheets/f8/MAX16064ETX-T.pdf. One more detailed here: https://power.murata.com/pub/data/apnotes/acan-51.pdf. However, the register numbers and scaling factors does not correspond to my findings on how the DPS-1200FB responds. 
 
+<checksum goes here>
 
 
 
