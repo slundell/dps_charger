@@ -15,6 +15,7 @@ The bottom part of the connector has pins 1 to 32.
 ![Connector-bottom](https://github.com/slundell/dps_charger/raw/master/doc/images/connector-top.jpg)
  The top one has 33 to 64.
 
+```
 Pinout:
 1: +12V Power out
 14: GND Power out
@@ -28,7 +29,7 @@ Pinout:
 36: PRESENT
 37: +12V stand-by
 38: PSALARM
-
+```
 
 
 For a more in-depth look at the different pins' properties: (http://colintd.blogspot.com/2016/10/hacking-hp-common-slot-power-supplies.html)
@@ -79,7 +80,7 @@ The EEPROM is writable from the i2c bus.
 0xF8: 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 ........
 ```
 
-#Commands
+# Commands
 The MCU responds to i2c commands/registers. The challenge is to figure out which commands do what. According to http://colintd.blogspot.com/2016/10/hacking-hp-common-slot-power-supplies.html the PSU should be communicating according to the PMbus protocol. With some effort I was able to find some specs of the protocol in datasheets. This one is probably the most readable: https://www.components-mart.com/datasheets/f8/MAX16064ETX-T.pdf. One more detailed here: https://power.murata.com/pub/data/apnotes/acan-51.pdf. However, the register numbers and scaling factors does not correspond to my findings on how the DPS-1200FB responds. 
 
 <checksum goes here>
@@ -101,9 +102,14 @@ By adjusting the voltage on this pin, the output voltage can be adjusted. I conn
 ![12.42v](https://github.com/slundell/dps_charger/raw/master/doc/images/12_42v.jpg)
 ![13.68v](https://github.com/slundell/dps_charger/raw/master/doc/images/13_68v.jpg)
 
+I then tried 16p1s of GBS 20Ah LifePo4 batteries to see if we could pull some amps. According to my meter it was well above 100A. The i2c data shows roughly half of that. Possibly a scaling issue.
+![100+A](https://github.com/slundell/dps_charger/raw/master/doc/images/loaded_at_low_voltage.jpg)
 
 
 # Acknowledgements
 ## raplin
 A big chunk of the information here is from other sources. Richard Aplins github repo documents his reverse engineering of the PSU (https://github.com/raplin/DPS-1200FB). He has disassembled the actual PIC16F source code on the MCU! Through this he was able to figure out the checksum (PEC) calculations and more. He has also figured out the meaning and scale of many of the command registers. 
 
+## colindt
+Colin has documented a lot if information regarding the hardware side of things. He figured out the pin-out and other things.
+(http://colintd.blogspot.com/)
