@@ -84,6 +84,23 @@ The MCU responds to i2c commands/registers. The challenge is to figure out which
 
 <checksum goes here>
 
+# Modifications
+
+## 12VFB tap
+The PSU control board gets an 12v feedback signal from the main board. This hoovers around 2.500v. I guess 2.500v means "just right" and <2.500v means "too low" and >2.500v means "too high". This pin is connected to a few components on the board. A few different resistors, probably acting as voltage dividers for the different "consumers" of the feedback signal. One path is through the voltage adjustment potentiometer through to the MCU.
+
+By adjusting the voltage on this pin, the output voltage can be adjusted. I connected a potentiometer between 12VSB, GND and 12VFB (wiper to 12VFB). This allowed me to adjust the voltage from 0.2V up to around 13.7V where the OVP kicks in. Interestingly, UVP did not stop the PSU. I had a halogen bulb connected and measured the voltage on the output terminals to make sure the voltage would stay even under a light load. The PSU I2C reports the actual voltage!
+
+![12VFB Tap](https://github.com/slundell/dps_charger/raw/master/doc/images/12FB-tap.jpg)
+
+![0.35v](https://github.com/slundell/dps_charger/raw/master/doc/images/0_35v.jpg)
+![1.94v](https://github.com/slundell/dps_charger/raw/master/doc/images/1_94v.jpg)
+![4.45v](https://github.com/slundell/dps_charger/raw/master/doc/images/4_45v.jpg)
+![8.73v](https://github.com/slundell/dps_charger/raw/master/doc/images/8_73v.jpg)
+![10.01v](https://github.com/slundell/dps_charger/raw/master/doc/images/10_01v.jpg)
+![12.42v](https://github.com/slundell/dps_charger/raw/master/doc/images/12_42v.jpg)
+![13.68v](https://github.com/slundell/dps_charger/raw/master/doc/images/13_68v.jpg)
+
 
 
 # Acknowledgements
