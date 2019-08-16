@@ -2,10 +2,39 @@
 The DPS-1200FB is a very powerful and compact powersupply. It can supply up to 100A adjustable between 11.8v-12.8v. This is perfect for supplying high currents to 12v equipment like your boat fridge etc. It won't, however, charge any 12v lead-acid or lithium batteries. You would need 14.4v (lead acid) or 14.6v (lithium) to get a full charge. There are some mods floating around on the interwebs on how to increase voltage, how to series connect two PSUs and how to amputate the Over Voltage Protection (OVP). 
 
 # Goal
-The goal with this project is to use an Arduino to control the PSU. Ideally you would be able to control output current, voltage, fan speed and on/off. That would allow us to build a powerful lab power supply, a custom battery charger, a flexible mining PSU etc etc. 
+The goal with this project is to use an Arduino to control the PSU. Ideally you would be able to control output current, voltage, fan speed and on/off. That would allow us to build a powerful lab power supply, a custom battery charger, a flexible mining PSU etc etc. Should I not be able to reach the goal of controlling the PSU digitally through its data port, workarounds might be available.
 
 # How
-The PSU has an i2c port through which it reports status and takes commands. It contains two devices that responds on the i2c bus, the EEPROM and the PIC micro processor. 
+The PSU has an i2c port through which it reports status and takes commands. It contains two devices that responds on the i2c bus, the EEPROM and the PIC micro processor. Their addresses are set by the server by pulling up or down certain pins in the end connector. The EEPROM can be read and written using this bus. The MCU responds to commands sent to it. raplin (https://github.com/raplin/) has shown that it accepts fan speed commands, and reports fan speed back if queried. He has also documented several other commands and data.
+
+## Connection
+The PSU has a double sided edge connector. The majority of which is taken up by the high current output tabs. There are also 6 smaller tabs on each side. These have various functions in turning on the PSU and selecting its i2c address.
+
+![Connector-bottom](https://github.com/slundell/dps_charger/raw/master/doc/images/connector-bottom.jpg)
+The bottom part of the connector has pins 1 to 32.
+![Connector-bottom](https://github.com/slundell/dps_charger/raw/master/doc/images/connector-top.jpg)
+ The top one has 33 to 64.
+
+Pinout:
+1: +12V Power out
+14: GND Power out
+27, 28, 29: I2C slave address selection pins. 
+30: GND (for I2C and I2C slave address selection, I guess)
+31: I2C SCL
+32: I2C SDA
+33: ENABLE#
+34: LOAD SHARE
+35: STATUS
+36: PRESENT
+37: +12V stand-by
+38: PSALARM
+
+
+
+For a more in-depth look at the different pins' properties: (http://colintd.blogspot.com/2016/10/hacking-hp-common-slot-power-supplies.html)
+
+
+These are default high, but can be pulled low by connecting them to GND.
 
 <pinout/connection goes here>
 
@@ -56,4 +85,8 @@ The MCU responds to i2c commands/registers. The challenge is to figure out which
 <checksum goes here>
 
 
+
+# Acknowledgements
+## raplin
+A big chunk of the information here is from other sources. Richard Aplins github repo documents his reverse engineering of the PSU (https://github.com/raplin/DPS-1200FB). He has disassembled the actual PIC16F source code on the MCU! Through this he was able to figure out the checksum (PEC) calculations and more. He has also figured out the meaning and scale of many of the command registers. 
 
