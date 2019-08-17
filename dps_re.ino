@@ -13,6 +13,109 @@ BANK0:PORTA, RA4 ; adjust I2c address based on address inputs (PA4,PA5,PE3)
 
 
 
+
+
+
+
+
+
+
+
+0x00: 0D6 ; 'Ö'
+0x02: 0B0 ; '°'       ; returns some flags
+0x03: 0B1 ; '±'
+0x04: 0B2 ; '²'       ; more readable flags
+0x05: 0B3 ; '³'
+0x06: 0B4 ; '´'       ; status flags incl temperature flags
+0x07: 0B5 ; 'µ'
+0x08: 0B6 ; '¶'       ; input voltage
+0x09: 0B7 ; '·'
+0x0A: 0B8 ; '¸'       ; amps in
+0x0B: 0B9 ; '¹'
+0x0C: 0D7 ; '×'       ; watts in
+0x0D: 0D8 ; 'Ø'
+0x0E: 0BA ; 'º'       ; output voltage
+0x0F: 0BB ; '»'
+0x10: 0BC ; '¼'       ; possibly output current
+0x11: 0BD ; '½'
+0x12: 0D9 ; 'Ù'       ; output watts
+0x13: 0DA ; 'Ú'
+0x14: 79 ; 'y'
+0x15: 79 ; 'y'
+0x16: 79 ; 'y'
+0x17: 79 ; 'y'
+0x18: 79 ; 'y'
+0x19: 79 ; 'y'
+0x1A: 0BE ; '¾'       ; think this is input air temperature
+0x1B: 0BF ; '¿'
+0x1C: 0C0 ; 'À'       ; this is some (higher) internal temperature
+0x1D: 0C1 ; 'Á'
+0x1E: 0C2 ; 'Â'       ; fan speed (rpm?)
+0x1F: 0C3 ; 'Ã'
+0x20: 79 ; 'y'        ; 
+0x21: 79 ; 'y'
+0x22: 79 ; 'y'
+0x23: 79 ; 'y'
+0x24: 79 ; 'y'
+0x25: 79 ; 'y'
+0x26: 79 ; 'y'
+0x27: 79 ; 'y'
+0x28: 79 ; 'y'
+0x29: 79 ; 'y'
+0x2A: 79 ; 'y'
+0x2B: 79 ; 'y'
+0x2C: 0DB ; 'Û'       ; total watts in (4 bytes)
+0x2D: 0DC ; 'Ü'
+0x2E: 0DD ; 'Ý'
+0x2F: 0DE ; 'Þ'
+0x30: 0DF ; 'ß'       ; some simple up-counter (perhaps secs)
+0x31: 0E0 ; 'à'
+0x32: 0E1 ; 'á'       ; MaxWattsIn
+0x33: 0E2 ; 'â'
+0x34: 0C4 ; 'Ä'       ; Min recorded input current(?)
+0x35: 0C5 ; 'Å'
+0x36: 0C6 ; 'Æ'       ; Max recorded output current
+0x37: 0C7 ; 'Ç'
+0x38: 79 ; 'y'
+0x39: 79 ; 'y'
+0x3A: 0C8 ; 'È'       ; bitflags ; bits 3,4,5,6 do something
+0x3B: 0C9 ; 'É'
+0x3C: 0CD ; 'Í'       ; written by cmd 3d
+0x3D: 0E4 ; 'ä'
+0x3E: 79 ; 'y'
+0x3F: 79 ; 'y'
+0x40: 0E5 ; 'å'       ; fan related lsb
+0x41: 0D4 ; 'Ô'       ; fan related msb
+0x42: 79 ; 'y'
+0x43: 79 ; 'y'
+0x44: 0E6 ; 'æ'
+0x45: 0E7 ; 'ç'
+0x46: 0E8 ; 'è'
+0x47: 0E9 ; 'é'
+0x48: 0EA ; 'ê'       ; some value
+0x49: 0EB ; 'ë'
+0x4A: 0EC ; 'ì'       ; related to above - peak value?
+0x4B: 0ED ; 'í'
+0x4C: 79 ; 'y'
+0x4D: 79 ; 'y'
+0x4E: 79 ; 'y'
+0x4F: 79 ; 'y'
+0x50: 0EE ; 'î'       ; 
+0x51: 0EF ; 'ï'
+0x52: 0A5 ; '¥'
+0x53: 0A6 ; '¦'
+0x54: 0A7 ; '§'
+0x55: 0A8 ; '¨'
+0x56: 0A9 ; '©'
+0x57: 0AA ; 'ª'
+0x58: 79 ; 'y'
+0x59: 79 ; 'y'
+
+
+
+
+
+
 */
 
 
@@ -23,10 +126,35 @@ BANK0:PORTA, RA4 ; adjust I2c address based on address inputs (PA4,PA5,PE3)
 bool ignore_registers[0xFF+1];
 uint8_t inspect_register;
 
-uint8_t test_cmd  = 0x01;
+uint8_t test_cmd  = 0x03;
 uint16_t test_data = 0x0000;
 
 void setup_ignore_registers(){
+
+
+/*
+
+Back-powering the PSU: 
+
+0x02: 0x03 0x06 00000011 00000110 774                   was: 0x03 0x07 00000011 00000111 775
+0x04: 0x00 0x09 00000000 00001001 9                     was: 0x00 0x00 00000000 00000000 0
+0x06: 0x00 0x20 00000000 00100000 32                    was: 0x00 0x00 00000000 00000000 0
+
+*/
+
+
+
+/*  
+cmd 0x57=(?0x28) read EEPROM 
+max cmd = 0x59 (=?0x29)
+
+
+
+*/
+
+
+
+
 
   ignore_registers[0x00] = false; 
   ignore_registers[0x02] = false; // [?D] Flags. Power Good?
@@ -62,69 +190,82 @@ void setup_ignore_registers(){
   ignore_registers[0x34] = true;  // [?D] Min amps in
   ignore_registers[0x36] = true;  // [?D] Peak amps out
   ignore_registers[0x38] = false; 
-  ignore_registers[0x3A] = false; // [?D] Cool flags1
-
+  ignore_registers[0x3A] = false; // [?D] Cool flags1 
     // 0x3A:5 seems to be "Power out is on" flag
-/*0x3A
-00000000 00000001
+
+/*
+0x3A: 00000000 00000001
 Register 0x3A changed from 0 to 1 after reg 0x3A bit 0
-00000000 00000010
+0x3A: 00000000 00000010
 Register 0x3A changed from 1 to 2 after reg 0x3A bit 1
-00000000 00000100
+0x3A: 00000000 00000100
 Register 0x3A changed from 2 to 4 after reg 0x3A bit 2
-00000000 00001000
+0x3A: 00000000 00001000
 Register 0x3A changed from 4 to 8 after reg 0x3A bit 3
-00000000 00010000
+0x3A: 00000000 00010000
 Register 0x3A changed from 8 to 16 after reg 0x3A bit 4
-00000000 00100000
-Register 0x3A changed from 16 to 0 after reg 
-0x3C
-00000000 00000001
-Register 0x02 changed from 775 to 839 after reg 0x3C bit 0
-Register 0x3A changed from 0 to 64 after reg 0x3C bit 0
-Register 0x3C changed from 0 to 1 after reg 0x3C bit 0
-00000000 00000010
-Register 0x3C changed from 1 to 2 after reg 0x3C bit 1
-00000000 00000100
-Register 0x3C changed from 2 to 4 after reg 0x3C bit 2
-00000000 00001000
-Register 0x3C changed from 4 to 8 after reg 0x3C bit 3
-00000000 00010000
-Register 0x3C changed from 8 to 16 after reg 0x3C bit 4
-00000000 00100000
-Register 0x3C changed from 16 to 32 after reg 0x3C bit 5
-00000000 01000000
-Register 0x3C changed from 32 to 64 after reg 0x3C bit 6
-00000000 10000000
-Register 0x3C changed from 64 to 128 after reg 0x3C bit 7
-00000001 00000000
-Register 0x3C changed from 128 to 256 after reg 0x3C bit 8
-00000010 00000000
-Register 0x3C changed from 256 to 512 after reg 0x3C bit 9
-00000100 00000000
-Register 0x3C changed from 512 to 1024 after reg 0x3C bit 10
-00001000 00000000
-Register 0x3C changed from 1024 to 2048 after reg 0x3C bit 11
-00010000 00000000
-Register 0x3C changed from 2048 to 4096 after reg 0x3C bit 12
-00100000 00000000
-Register 0x3C changed from 4096 to 8192 after reg 0x3C bit 13
-01000000 00000000
-Register 0x3C changed from 8192 to 16384 after reg 0x3C bit 14
-10000000 00000000
-Register 0x3C changed from 16384 to 32768 after reg 0x3C bit 15
-0x3D
-00000000 00000001
-Register 0x02 changed from 839 to 775 after reg 0x3D bit 0
-*/
+0x3A: 00000000 00100000
+Register 0x3A changed from 16 to 0 after reg 0x3A bit 5
+0x3A: 00000000 01000000
+0x3A: 00000000 10000000
+0x3A: 00000001 00000000
+0x3A: 00000010 00000000
+0x3A: 00000100 00000000
+0x3A: 00001000 00000000
+0x3A: 00010000 00000000
+0x3A: 00100000 00000000
+0x3A: 01000000 00000000
+0x3A: 10000000 00000000
 
   // 0x3A: 0x00 0x1F 00000000 00011111 31 batt power + grid power                   
-  //  was: 0x00 0x3F 00000000 00111111 63 batt power
+  //  was: 0x00 0x3F 00000000 00111111 63 batt power no grid power
 
   // Last 6b is settable 0x3A: 0x00 0x3F 00000000 00111111 63
+*/
 
   ignore_registers[0x3C] = false; // [?D] Cool flags2
   /* All bits are settable 0x3C: 0xFF 0xFF 11111111 11111111 65535 -> Fan speeds up
+/*
+0x3C: 00000000 00000001
+Register 0x02 changed from 775 to 839 after reg 0x3C bit 0
+Register 0x3A changed from 0 to 64 after reg 0x3C bit 0
+Register 0x3C changed from 0 to 1 after reg 0x3C bit 0
+0x3C: 00000000 00000010
+Register 0x3C changed from 1 to 2 after reg 0x3C bit 1
+0x3C: 00000000 00000100
+Register 0x3C changed from 2 to 4 after reg 0x3C bit 2
+0x3C: 00000000 00001000
+Register 0x3C changed from 4 to 8 after reg 0x3C bit 3
+0x3C: 00000000 00010000
+Register 0x3C changed from 8 to 16 after reg 0x3C bit 4
+0x3C: 00000000 00100000
+Register 0x3C changed from 16 to 32 after reg 0x3C bit 5
+0x3C: 00000000 01000000
+Register 0x3C changed from 32 to 64 after reg 0x3C bit 6
+0x3C: 00000000 10000000
+Register 0x3C changed from 64 to 128 after reg 0x3C bit 7
+0x3C: 00000001 00000000
+Register 0x3C changed from 128 to 256 after reg 0x3C bit 8
+0x3C: 00000010 00000000
+Register 0x3C changed from 256 to 512 after reg 0x3C bit 9
+0x3C: 00000100 00000000
+Register 0x3C changed from 512 to 1024 after reg 0x3C bit 10
+0x3C: 00001000 00000000
+Register 0x3C changed from 1024 to 2048 after reg 0x3C bit 11
+0x3C: 00010000 00000000
+Register 0x3C changed from 2048 to 4096 after reg 0x3C bit 12
+0x3C: 00100000 00000000
+Register 0x3C changed from 4096 to 8192 after reg 0x3C bit 13
+0x3C: 01000000 00000000
+Register 0x3C changed from 8192 to 16384 after reg 0x3C bit 14
+0x3C: 10000000 00000000
+Register 0x02 changed from 839 to 775 after reg 0x3C bit 15
+Register 0x3C changed from 16384 to 32768 after reg 0x3C bit 15
+0x3D: 00000000 00000001
+
+
+
+
 
     0x02: 0x03 0x07 00000011 00000111 775                   was: 0x03 0x47 00000011 01000111 839
     0x3A: 0x00 0x5F 00000000 01011111 95                    was: 0x00 0x1F 00000000 00011111 31
@@ -565,7 +706,15 @@ Reconnecting AC power:
 
 #include <ESP8266WiFi.h>
 #include <ArduinoOTA.h>
+
+
+//#define SSI2CMno
+
+//#ifndef SSI2CM
 #include "Wire.h"
+//#else
+//#include #include <SlowSoftI2CMaster.h>
+//#endif
 
 #include "./stassid.h"
 
@@ -659,17 +808,22 @@ void print_data(){
 
 
 void scan_for_device(uint8_t from, uint8_t to, uint8_t& ret) {
-  byte error, address;
+  byte address;
   
   
   for (address = from ; address <= to; address++ )  {
+/*    
+#ifdef SSI2CM
+    bool ack = i2c_start(i<<1 | I2C_WRITE); 
+#else
+*/
     Wire.beginTransmission(address);
-    error = Wire.endTransmission();
-
-    if (error == 0){
-      /*Telnet.print("Device found at ");
+    uint8_t ack = Wire.endTransmission();
+//#endif
+    if (ack == 0){
+      Telnet.print("Device found at ");
       print_byte(address);
-      Telnet.println();*/
+      Telnet.println();
       ret = address;
       return;
     } 
@@ -703,6 +857,7 @@ void reconnect_wifi() {
     WiFi.mode(WIFI_STA);  
     WiFi.begin(ssid, password);  
     while (WiFi.status() != WL_CONNECTED) {  
+      Serial.println("Connecting to wifi...");
         delay(500);  
     }  
 }  
@@ -710,7 +865,30 @@ void reconnect_wifi() {
 
 /****************************************************** P S U  E E P R O M */
 
-byte read_eeprom_byte(long addr)
+
+/*#ifdef SSI2CM
+uint8_t read_eeprom_byte(uint8_t addr){
+  i2c_start(deviceAddress<<1 | I2C_WRITE);
+  i2c_write(addr);
+  i2c_rep_start(deviceAddress<<1 | I2C_READ);
+  uint8_t b = i2c_read(true);
+  i2c_stop();
+  return b;
+}
+
+
+void read_eeprom_string(uint8_t addr, uint8_t len, char* s)
+{
+  for (uint8_t i= addr; i<addr+len; i++){
+    s[i] = read_eeprom_byte(i);
+    i++;
+  }
+  s[i] = '\0';
+}
+
+#else*/
+
+uint8_t read_eeprom_byte(long addr)
 {
   Wire.beginTransmission(psu_mem_addr);
 
@@ -719,7 +897,7 @@ byte read_eeprom_byte(long addr)
 
   Wire.requestFrom((uint8_t)psu_mem_addr, (uint8_t)1);
 
-  byte rdata = 0xFF;
+  uint8_t rdata = 0xFF;
   if (Wire.available()) rdata = Wire.read();
   return rdata;
 }
@@ -741,7 +919,7 @@ void read_eeprom_string(uint8_t addr, uint8_t len, char* s)
   }
   s[i] = '\0';
 }
-
+//#endif
 void read_eeprom(){
 
   read_eeprom_string(0x12, 10, psu_spn);
@@ -756,18 +934,54 @@ void read_eeprom(){
 
 void read_entire_eeprom(){
 
-  uint8_t a = 0;
-  for (a = 0 ; a<0xFF; a++){
-    uint8_t b = read_eeprom_byte(a);
+  for (uint8_t a = 0 ; a<0xFF; a+=8){
     print_byte(a);
     Telnet.print(": ");
-    print_byte(b);
-    Telnet.print(" ");
-    Telnet.println((char)b);
+    for (uint8_t b = 0 ; b<8; b++){
+      uint8_t bte = read_eeprom_byte((uint8_t)(a+b));
+      print_byte(bte);
+      Telnet.print(" ");
+    }
+    for (uint8_t b = 0 ; b<8; b++){
+      uint8_t bte = read_eeprom_byte((uint8_t)(a+b));
+      if ((bte >= 0x20) && (bte <= 0x7E)){ //printable chars
+        Telnet.print((char)bte);
+      } else {
+        Telnet.print('.');
+      }
+    }
+    Telnet.println();
+  }
+
+}
+/*
+
+uint16_t eeprom[255];
+uint16_t eeprom_old[255];
+uint16_t eeprom_last_change[255];
+uint8_t eeprom_last_change_age[255];
+
+
+
+void read_all_eeprom_changes(){
+
+  for (uint8_t i=0; i<255;++i){
+   // if (ignore_eeprom[i]) continue;
+    eeprom[i] = read_eeprom_byte(i);
+    if (eeprom[i] != eeprom_old[i]) {
+      eeprom_last_change_age[i] = 0;
+      eeprom_last_change[i] = eeprom_old[i];
+    }
+    else {
+      if (eeprom_last_change_age[i]!=0xFF){
+        eeprom_last_change_age[i]++;
+      }
+    }
+    eeprom_old[i] = eeprom[i];
   }
 }
 
-
+*/
 
 
 /****************************************************** P S U  M C U */
@@ -795,7 +1009,11 @@ bool checksum(uint8_t* msg, uint8_t msg_len){
   return (cs==0);
 
 }
+/*
+#ifdef SSI2CM
 
+#else
+*/
 bool read_psu_mcu(uint8_t reg, uint8_t len, uint8_t* msg){
     //reg = reg << 1;
     uint8_t cs = reg + (psu_mcu_addr<<1);
@@ -804,9 +1022,9 @@ bool read_psu_mcu(uint8_t reg, uint8_t len, uint8_t* msg){
     Wire.write((uint8_t)(reg));
     Wire.write((uint8_t)(reg_cs));
     Wire.endTransmission(true);
-    delay(1);
+    //delay(1);
 
-    Wire.requestFrom((uint8_t)psu_mcu_addr, (uint8_t)len);
+    Wire.requestFrom((uint8_t)psu_mcu_addr, (uint8_t)len, false);
     /*print_byte(reg);
     Telnet.print(": ");*/
     
@@ -830,6 +1048,17 @@ bool read_psu_mcu(uint8_t reg, uint8_t len, uint8_t* msg){
     return checksum(msg, len);
 
 }
+/*
+#endif
+*/
+bool read_psu_mcu_u8(uint8_t reg, uint8_t& ret){
+  uint8_t msg[2];
+  if (!read_psu_mcu(reg, 2, msg)){
+    return false;
+  }
+  ret = msg[0];
+  return true;
+}
 
 bool read_psu_mcu_u16(uint8_t reg, uint16_t& ret){
   uint8_t msg[3];
@@ -839,6 +1068,7 @@ bool read_psu_mcu_u16(uint8_t reg, uint16_t& ret){
   ret = (msg[1] << 8) + msg[0];
   return true;
 }
+
 
 bool read_psu_mcu_f16(uint8_t reg, double scale, double& ret){
   uint16_t u16;
@@ -910,14 +1140,10 @@ bool read_psu_cool_flags_2(uint16_t& ret){
   return (read_psu_mcu_u16(0x3A, ret));
 }
 
-bool read_psu_voltage_threshold_1(double& ret){
-  return (read_psu_mcu_f16(0x44, 32., ret));
-}
 
-bool read_psu_voltage_threshold_2(double& ret){
-  return (read_psu_mcu_f16(0x46>>1, 32., ret));
+bool read_psu_out_max_amperage(double& ret){
+  return (read_psu_mcu_f16(0x36, 1./128, ret));
 }
-
 
 bool read_psu_data(){
   return ((read_psu_grid_voltage(psu_grid_voltage)) &&
@@ -1023,37 +1249,79 @@ void read_psu_mcu_changing_registers(){
 
 
 void fuzz_for_voltage(){
-  uint8_t reg;
-  uint8_t bit;
 
+  uint16_t tw_idx;
   double volt;
   double old_volt;
 
-  read_psu_out_voltage(volt);
-  old_volt=volt;
-  for (reg = 0; reg < 0xFF; reg++){
-    print_byte(reg);
-    Telnet.println();
-    yield();
-    ArduinoOTA.handle();
-    handleTelnet();
+  uint16_t test_words[] = { //0x0000, // [1]
+                            //0x0001, 0x0002, 0x0004, 0x0008, 0x0010, 0x0020, 0x0040, 0x0080, 0x0100, 0x0200, 0x0400, 0x0800, 0x1000, 0x2000, 0x4000, 0x8000, // [16] walking 1s
+                            //0x0001, 0x0003, 0x0007, 0x000F, 0x001F, 0x003F, 0x007F, 0x00FF, 0x01FF, 0x03FF, 0x07FF, 0x0FFF, 0x1FFF, 0x3FFF, 0x7FFF, 0xFFFF, // [16] fill with 1s from left
+                            //0x5555, 0xAAAA, // [2] Alterneting 1s and 0s
+                            //0x0F00//, // [1] 15V
+                            //0x0D00//, // [1] 13V
+                            //0x0B00  // [1] 11V 
+                            0x0A00//, // [1] 10V
+                          };
 
-    for (bit=0; bit<16;bit++){
-      write_psu_mcu_u16(reg, (uint16_t)(1<<bit));
+  uint16_t num_test_words =  1;
+
+  uint8_t test_regs[] = {0x44, 0x48, 0x50, 0x52, 0x54};
+  uint8_t num_test_regs = 5;
+  
+
+  read_psu_out_voltage(volt);
+
+  old_volt=volt;
+  for (uint8_t reg_idx = 0; reg_idx < num_test_regs; reg_idx++){
+
+
+    read_all_psu_registers();
+    print_byte(test_regs[reg_idx]);
+    Telnet.println();
+    my_yield();
+
+    Telnet.print(volt);
+    Telnet.println("V");
+    for (tw_idx = 0; tw_idx < num_test_words; tw_idx++){
       
+      
+      write_psu_mcu_u16(test_regs[reg_idx], test_words[tw_idx]);
+
+      Telnet.print(tw_idx);
+      Telnet.print(" ");
+      print_byte(test_words[tw_idx] >> 8);
+      Telnet.print(" ");
+      print_byte(test_words[tw_idx] & 0xFF);
+      Telnet.print(" : ");
+
+
+      print_bits(test_words[tw_idx] >> 8);
+      Telnet.print(" ");
+      print_bits(test_words[tw_idx] & 0xFF);
+      Telnet.println();
+
+      //read_psu_mcu_changing_registers();
       read_psu_out_voltage(volt);
-      if (abs(old_volt - volt) > 0.02){
+      //Telnet.println((old_volt - volt));
+      if (((old_volt - volt) > 0.08) || ((old_volt - volt) < -0.08)){
           Telnet.println("Voltage changed from ");
           Telnet.print(old_volt);
-          Telnet.print("v to ");
+          Telnet.print("V to ");
           Telnet.print(volt);
-          Telnet.println("v after reg ");
-          print_byte(reg);
-          Telnet.print(" bit ");
-          Telnet.println(bit);
+          Telnet.println("V after reg ");
+          print_byte(test_regs[reg_idx]);
+          Telnet.print(" value ");
+          Telnet.println(test_words[tw_idx], HEX);
+          for (uint8_t w=0; w<0xF0; w++){
+            Telnet.print(".");
+            Telnet.flush();
+            my_yield();
+          }
       }
       old_volt=volt;
-      force_psu_fan(3200);
+      //force_psu_fan(3200);
+     // delay(50);
     }
   }  
 }
@@ -1062,10 +1330,7 @@ void read_all_psu_registers(){
   uint16_t u16;
   for (uint8_t i=0; i<255;++i){
     if (ignore_registers[i]) continue;
-    
     read_psu_mcu_u16(i, u16);
-    registers[i] = u16;
-
     if (registers[i] != registers_old[i]) {
       registers_last_change_age[i] = 0;
       registers_last_change[i] = registers_old[i];
@@ -1079,6 +1344,69 @@ void read_all_psu_registers(){
   }
 }
 
+
+void search_for_voltage_registers(){
+  uint16_t u16;
+  for (uint8_t i=0; i <= 0x7F; i+=2){
+
+
+    
+    read_psu_mcu_u16(i, u16);
+    registers[i] = u16;
+    if ((i==0x0E) ||
+        //((i > 0x40) && (i<0x60)) ||
+
+        ((i!=0x40) &&
+        (i!=0x1E) && 
+        (u16 >= 0xb00) && 
+        (u16 <= 0xF00))){
+      Telnet.print("Possible voltage register: ");
+      print_byte(i);
+      Telnet.print(" ");
+      print_byte(u16 >> 8);
+      Telnet.print(" ");
+      print_byte(u16 & 0xFF);
+      
+      Telnet.print(" ");
+      Telnet.print(u16 / 256.);
+
+      Telnet.println("v");
+    }
+  }
+}
+
+
+void search_for_voltage_eeprom(){
+  uint16_t u16;
+  for (uint8_t i=0; i <= 0x7F; i+=2){
+
+
+    
+    read_psu_mcu_u16(i, u16);
+    registers[i] = u16;
+    if ((i==0x0E) ||
+        //((i > 0x40) && (i<0x60)) ||
+
+        ((i!=0x40) &&
+        (i!=0x1E) && 
+        (u16 >= 0xb00) && 
+        (u16 <= 0xF00))){
+      Telnet.print("Possible voltage register: ");
+      print_byte(i);
+      Telnet.print(" ");
+      print_byte(u16 >> 8);
+      Telnet.print(" ");
+      print_byte(u16 & 0xFF);
+      
+      Telnet.print(" ");
+      Telnet.print(u16 / 256.);
+
+      Telnet.println("v");
+    }
+  }
+}
+/*
+/*
 void fuzz(){
   uint8_t reg;
   uint8_t bit;
@@ -1092,9 +1420,14 @@ void fuzz(){
     registers_old[i] = u16;
     registers_last_change[i] = u16;
     registers_last_change_age[i]=0xFF;
+
+    eeprom[i] = read_eeprom_byte(i);
+    eeprom_old[i] = eeprom[i];
+    eeprom_last_change[i] = eeprom[i];
+    eeprom_last_change_age[i] = 0xFF;
   }
 
-  for (reg = 0xFE; reg <= 0xFF; reg++){
+  for (reg = 0x2E; reg <= 0xFF; reg++){
     for (bit=0; bit<16;bit++){
       print_byte(reg);
       Telnet.print(": ");
@@ -1108,10 +1441,10 @@ void fuzz(){
       yield();
       ArduinoOTA.handle();
       handleTelnet();
+      read_all_eeprom_changes();
+
       for (uint8_t i=0; i<255;++i){
         if (ignore_registers[i]) continue;
-        
-
 
         if (registers_last_change_age[i] == 0){
           Telnet.print("Register ");
@@ -1126,14 +1459,55 @@ void fuzz(){
           Telnet.println(bit);  
         }
       }
+
+      for (uint8_t i=0; i<255;++i){
+        //if (ignore_registers[i]) continue;
+
+        if (eeprom_last_change_age[i] == 0){
+          Telnet.print("EEPROM location ");
+          print_byte(i);
+          Telnet.print(" changed from ");
+          Telnet.print(eeprom_last_change[i]);
+          Telnet.print(" to ");
+          Telnet.print(eeprom[i]);
+          Telnet.print(" after reg ");
+          print_byte(reg);
+          Telnet.print(" bit ");
+          Telnet.println(bit);  
+        }
+      }
+
       force_psu_fan(3200);
     }
   }  
 }
 
+*/
+
+void write_psu_mcu_nothing(uint8_t reg){
+  
+  uint8_t cs = (psu_mcu_addr<<1) + reg;
+  uint8_t reg_cs = ((0xff-cs)+1) & 0xff;
+/*
+  print_byte(reg); Telnet.print(" ");
+  print_byte(val_lsb); Telnet.print(" ");
+  print_byte(val_msb); Telnet.print(" ");
+  //print_byte(cs); Telnet.println(" ");
+  print_byte(reg_cs); Telnet.println(" ");
+  
+*/
+  Wire.beginTransmission(psu_mcu_addr);
+  Wire.write((uint8_t)(reg));
+  Wire.write((uint8_t)(reg_cs));
+  uint8_t res = Wire.endTransmission();
+  Telnet.print("nothing result: ");
+  Telnet.println(res);
+
+}
+
 
 void write_psu_mcu_u8(uint8_t reg, uint8_t val){
-
+  
   uint8_t cs = (psu_mcu_addr<<1) + reg + val;
   uint8_t reg_cs = ((0xff-cs)+1) & 0xff;
 /*
@@ -1202,28 +1576,26 @@ void setup() {
   Telnet.println("Ready");
   Telnet.println("IP address: ");
   Telnet.println(WiFi.localIP());
+  Serial.println(WiFi.localIP());
 
   Wire.begin(D1, D2);  
   while (psu_mem_addr == 0xFF){
     Telnet.println("Scanning for EEPROM.");
     scan_for_device(0x50, 0x57, psu_mem_addr);
-    handleTelnet();
-    ArduinoOTA.handle();
-    yield();
+    my_yield();
   }
   read_eeprom();
 
   while (psu_mcu_addr == 0xFF){
     Telnet.println("Scanning for MCU.");
     scan_for_device(0x58, 0x5F, psu_mcu_addr);
-    handleTelnet();
-    ArduinoOTA.handle();
-    yield();
+    my_yield();
   }
-  handleTelnet();
+  my_yield();
   read_psu_mcu_registers_init();
   setup_ignore_registers();
   force_psu_fan(3200);
+
 }
 
 
@@ -1231,13 +1603,51 @@ void setup() {
 
 /****************************************************** M A I N  L O O P */
 
-uint8_t bootdelay = 60;
-void loop() {
+void my_yield(){
   if (WiFi.status() != WL_CONNECTED) {  
-      reconnect_wifi();
+    reconnect_wifi();
   }  
-  ArduinoOTA.handle();
   handleTelnet();
+  ArduinoOTA.handle();
+  yield();
+}
+
+uint8_t bootdelay = 20;
+void loop() {
+  my_yield();
+  //scan_for_device(0x58, 0x5F, psu_mcu_addr);
+  //Telnet.println('-');
+
+  /*Telnet.print("MCU addr: ");
+  print_byte(psu_mcu_addr);
+  Telnet.println();
+*/
+
+  //read_entire_eeprom();
+/*  uint16_t u16;
+  u16 = (((read_eeprom_byte(0x32)) << 8) + (read_eeprom_byte(0x33) && 0xFF));
+  print_byte(u16 >> 8);
+  Telnet.print(" ");
+  print_byte(u16 && 0xFF);
+  Telnet.println();
+*//*
+
+  uint8_t u8;
+  read_psu_mcu_u8(0x02, u8);
+  print_byte(u8);
+  Telnet.print(" ");
+  
+  Telnet.println(u8);
+*/
+
+  /*uint16_t u16;
+  read_psu_mcu_u16(0x1E, u16);
+  print_byte(u16 >> 8);
+  Telnet.print(" ");
+  print_byte(u16 && 0xFF);
+  Telnet.println();
+*/
+  /*fuzz();
   Telnet.println(".");
   write_psu_mcu_f16(0x44, 13.8, 1/256);
   write_psu_mcu_f16(0x46, 13.8, 1/256);
@@ -1249,14 +1659,15 @@ void loop() {
   write_psu_mcu_f16(0x52, 13.8, 1/256);
   write_psu_mcu_f16(0x54, 13.8, 1/256);
   write_psu_mcu_f16(0x56, 13.8, 1/256);
-
+*/
 
 
   //write_psu_mcu_f16(0x44, 13.8, 1/256);
   
   //fuzz(); 
-  //read_psu_mcu_changing_registers();
-/*
+  /*
+  read_psu_mcu_changing_registers();
+
   if (test_cmd != 0){
     if (bootdelay > 0) {
       Telnet.print("\nExecuting in: ");
@@ -1265,28 +1676,55 @@ void loop() {
     } else if (bootdelay == 0){
       Telnet.println("\nExecuted");
       if ((test_cmd != 0x40) && (test_cmd != 0x3c)){
-        write_psu_mcu_u16(test_cmd, test_data);
+        write_psu_mcu_u8(0x00, 0x03);
       }
-      test_cmd++;
-      bootdelay = 0;    
+      //test_cmd++;
+      bootdelay = 20;    
     }
   } else {
     read_psu_mcu_changing_registers();
   }
 */
-/*
+
+  
+  
   double psu_out_volt;
   double psu_out_amp;
-  if (read_psu_out_voltage(psu_out_volt) && read_psu_out_amperage(psu_out_amp)){
+  double psu_out_max_amp;
+  //Telnet.println();
+  delay(100);
+  //Telnet.println("\033c");
+  if (read_psu_out_voltage(psu_out_volt) && 
+      read_psu_out_amperage(psu_out_amp) &&
+      read_psu_out_max_amperage(psu_out_max_amp)
+    ){
 
     Telnet.print(psu_out_volt);
     Telnet.print("V ");
     Telnet.print(psu_out_amp);
-    Telnet.println("A");
+    Telnet.print("A ");
+    Telnet.print(psu_out_max_amp);
+    Telnet.println("A (max)");
   } else {
     Telnet.println("Error reading out voltage and current");
   }
-*/
+
+
+
+  if (psu_out_max_amp > 30){
+    Telnet.println("Resetting max amps");
+    write_psu_mcu_u16(0x58, 0x3700);
+    write_psu_mcu_u8(0x58, 0x37);
+
+    //write_psu_mcu_u16(0x37, 0x00);
+    // write_psu_mcu_u16(0x36, 0); //works by overwriting mem
+  }
+
+  //fuzz_for_voltage();
+  //search_for_voltage_registers();
+  //write_psu_mcu_f16(0x52, 12.5, 1./256.);
+  //delay(100);
+
 /*
   double psu_intake_temp;
   double psu_internal_temp;
@@ -1350,7 +1788,7 @@ void loop() {
     if (read_psu_grid_voltage(involt)){
       Telnet.print("In voltage ");
       Telnet.print(involt);
-      Telnet.println("v");
+      Telnet.println("V");
     } else {
       Telnet.println("Error reading voltage");
     }
