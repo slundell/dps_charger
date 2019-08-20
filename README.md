@@ -81,9 +81,11 @@ The EEPROM is writable from the i2c bus.
 ```
 
 # Commands
-The MCU responds to i2c commands/registers. The challenge is to figure out which commands do what. According to http://colintd.blogspot.com/2016/10/hacking-hp-common-slot-power-supplies.html the PSU should be communicating according to the PMbus protocol. With some effort I was able to find some specs of the protocol in datasheets. This one is probably the most readable: https://www.components-mart.com/datasheets/f8/MAX16064ETX-T.pdf. One more detailed here: https://power.murata.com/pub/data/apnotes/acan-51.pdf. However, the register numbers and scaling factors does not correspond to my findings on how the DPS-1200FB responds. 
+The MCU responds to i2c commands/registers. The challenge is to figure out which commands do what. According to http://colintd.blogspot.com/2016/10/hacking-hp-common-slot-power-supplies.html the PSU should be communicating according to the PMbus protocol. Here are some specs: https://www.components-mart.com/datasheets/f8/MAX16064ETX-T.pdf. One more detailed here: https://power.murata.com/pub/data/apnotes/acan-51.pdf. However, the register numbers and scaling factors does not correspond to my findings on how the DPS-1200FB responds. The DPS-1200FB most probably communicates over a propritary protocol.
 
-<checksum goes here>
+
+## Control board
+![CPU Board](https://github.com/slundell/dps_charger/raw/master/doc/images/cpu-board-annotated.png)
 
 # Modifications
 
@@ -113,3 +115,7 @@ A big chunk of the information here is from other sources. Richard Aplins github
 ## colindt
 Colin has documented a lot if information regarding the hardware side of things. He figured out the pin-out and other things.
 (http://colintd.blogspot.com/)
+
+## brettbeauregard
+Brett has made a PID controller library and explains it in great depth in a series of articles. I this to control voltage and current.
+http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/ https://github.com/br3ttb/Arduino-PID-Library
