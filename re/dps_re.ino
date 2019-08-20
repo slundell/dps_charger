@@ -152,6 +152,31 @@ max cmd = 0x59 (=?0x29)
 
 */
 
+/*
+
+ENABLE# LOW
+
+|HP PROLIANT SERVER PS                                 |
+| Input: 230.53V  0.13A    | Output: 11.96V  7.59A     |
+| Fan: 3360.00/s | Intake: 0.00C  | Internal  86.00C  |
+________________________________________________________
+
+
+0x02: 0x03 0x07 00000011 00000111 775                   was: 0x03 0x02 00000011 00000010 770
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1014,41 +1039,54 @@ bool checksum(uint8_t* msg, uint8_t msg_len){
 
 #else
 */
-bool read_psu_mcu(uint8_t reg, uint8_t len, uint8_t* msg){
+bool read_psu_mcu(uint8_t reg, uint8_t len, uint8_t* msg, bool verbose = true){
     
     //reg = reg << 1;
     uint8_t cs = reg + (psu_mcu_addr<<1);
     uint8_t reg_cs = ((0xff-cs)+1) & 0xff;
     Wire.beginTransmission(psu_mcu_addr);
-    Telnet.print("[>");
-    print_byte(psu_mcu_addr);
-    Telnet.print("] ");
+    if (verbose) {
+      Telnet.print("[>");
+      print_byte(psu_mcu_addr);
+      Telnet.print("] ");
+    }
     Wire.write((uint8_t)(reg));
-    print_byte(reg);
-    Telnet.print(": ");
+    if (verbose) {
+      print_byte(reg);
+      Telnet.print(": ");
+    }
     Wire.write((uint8_t)(reg_cs));
-    print_byte(reg_cs);
-    Telnet.print(" ");
+    if (verbose) {
+      print_byte(reg_cs);
+      Telnet.print(" ");
+    }
     Wire.endTransmission(true);
-    Telnet.println("[S]");
+    if (verbose) {
+      Telnet.println("[S]");
+    }
     delay(1);
 
     Wire.requestFrom((uint8_t)psu_mcu_addr, (uint8_t)len, false);
-    Telnet.print("[<");
-    print_byte(psu_mcu_addr);
-    Telnet.print("] ");
-    print_byte(reg);
-    Telnet.print(": ");
-    
+    if (verbose) {
+      Telnet.print("[<");
+      print_byte(psu_mcu_addr);
+      Telnet.print("] ");
+      print_byte(reg);
+      Telnet.print(": ");
+    }
     uint8_t i = 0;
     //uint8_t msg[len];
     while (Wire.available() && (i < len)){ 
       msg[i] = Wire.read(); 
-      print_byte((uint8_t)msg[i]);
-      Telnet.print(" ");
+      if (verbose) {
+        print_byte((uint8_t)msg[i]);
+        Telnet.print(" ");
+      }
       i++;
     }
-    Telnet.println("");
+    if (verbose) {
+      Telnet.println("");
+    }
     if (i!=len){
       Telnet.print("Expected to read ");
       Telnet.print(len);
@@ -1063,18 +1101,18 @@ bool read_psu_mcu(uint8_t reg, uint8_t len, uint8_t* msg){
 /*
 #endif
 */
-bool read_psu_mcu_u8(uint8_t reg, uint8_t& ret){
+bool read_psu_mcu_u8(uint8_t reg, uint8_t& ret, bool verbose=true){
   uint8_t msg[2];
-  if (!read_psu_mcu(reg, 2, msg)){
+  if (!read_psu_mcu(reg, 2, msg, verbose)){
     return false;
   }
   ret = msg[0];
   return true;
 }
 
-bool read_psu_mcu_u16(uint8_t reg, uint16_t& ret){
+bool read_psu_mcu_u16(uint8_t reg, uint16_t& ret, bool verbose=true){
   uint8_t msg[3];
-  if (!read_psu_mcu(reg, 3, msg)){
+  if (!read_psu_mcu(reg, 3, msg, verbose)){
     return false;
   }
   ret = (msg[1] << 8) + msg[0];
@@ -1082,17 +1120,17 @@ bool read_psu_mcu_u16(uint8_t reg, uint16_t& ret){
 }
 
 
-bool read_psu_mcu_f16(uint8_t reg, double scale, double& ret){
+bool read_psu_mcu_f16(uint8_t reg, double scale, double& ret, bool verbose=true){
   uint16_t u16;
-  if (!read_psu_mcu_u16(reg, u16)){
+  if (!read_psu_mcu_u16(reg, u16, verbose)){
     return false;
   }
   ret = scale * u16;
   return true;
 }
 
-bool read_psu_mcu_flags16(uint8_t reg, double scale, uint16_t& ret){
-  if (!read_psu_mcu_u16(reg, ret)){
+bool read_psu_mcu_flags16(uint8_t reg, double scale, uint16_t& ret, bool verbose=true){
+  if (!read_psu_mcu_u16(reg, ret, verbose)){
     return false;
   }
   return true;
@@ -1100,74 +1138,79 @@ bool read_psu_mcu_flags16(uint8_t reg, double scale, uint16_t& ret){
 
 
 
-bool read_psu_grid_voltage(double& ret){
-  return (read_psu_mcu_f16(0x08, 0.032, ret));
+bool read_psu_grid_voltage(double& ret, bool verbose = true){
+  return (read_psu_mcu_f16(0x08, 0.032, ret, verbose));
 }
 
-bool read_psu_grid_amperage(double& ret){
-  return (read_psu_mcu_f16(0x0A, 1/128., ret));
+bool read_psu_grid_amperage(double& ret, bool verbose = true){
+  return (read_psu_mcu_f16(0x0A, 1/128., ret, verbose));
 }
 
-bool read_psu_grid_wattage(double& ret){
-  return (read_psu_mcu_f16(0x0C, 2., ret));
+bool read_psu_grid_wattage(double& ret, bool verbose = true){
+  return (read_psu_mcu_f16(0x0C, 2., ret, verbose));
 }
 
-bool read_psu_out_voltage(double& ret){
-  return (read_psu_mcu_f16(0x0E, 1./256, ret));
+bool read_psu_out_voltage(double& ret, bool verbose = true){
+  return (read_psu_mcu_f16(0x0E, 1./256, ret, verbose));
 }
 
-bool read_psu_out_amperage(double& ret){
-  return (read_psu_mcu_f16(0x10, 1./128, ret));
+bool read_psu_out_amperage(double& ret, bool verbose = true){
+  return (read_psu_mcu_f16(0x10, 1./128, ret, verbose));
 }
 
-bool read_psu_out_wattage(double& ret){
-  return (read_psu_mcu_f16(0x1A, 2., ret));
+bool read_psu_out_wattage(double& ret, bool verbose = true){
+  return (read_psu_mcu_f16(0x1A, 2., ret, verbose));
 }
 
-bool read_psu_intake_temp(double& ret){
-  bool r = (read_psu_mcu_f16(0x18, 1./32., ret));
+bool read_psu_intake_temp(double& ret, bool verbose = true){
+  bool r = (read_psu_mcu_f16(0x18, 1./32., ret, verbose));
   //ret = (ret - 32.) * 5./9.;
   return r;
 }
 
-bool read_psu_internal_temp(double& ret){
-  bool r = (read_psu_mcu_f16(0x1C, 1./32., ret));
+bool read_psu_internal_temp(double& ret, bool verbose = true){
+  bool r = (read_psu_mcu_f16(0x1C, 1./32., ret, verbose));
   //ret = (ret - 32.) * 5./9.;
   return r;
 }
 
-bool read_psu_fan_speed_actual(double& ret){
-  return (read_psu_mcu_f16(0x1E, 1., ret));
+bool read_psu_fan_speed_actual(double& ret, bool verbose = true){
+  return (read_psu_mcu_f16(0x1E, 1., ret, verbose));
 }
 
-bool read_psu_fan_speed_desired(double& ret){
-  return (read_psu_mcu_f16(0x40, 1., ret));
+bool read_psu_fan_speed_desired(double& ret, bool verbose = true){
+  return (read_psu_mcu_f16(0x40, 1., ret, verbose));
 }
 
-bool read_psu_cool_flags_1(uint16_t& ret){
-  return (read_psu_mcu_u16(0x3A, ret));
+bool read_psu_cool_flags_1(uint16_t& ret, bool verbose = true){
+  return (read_psu_mcu_u16(0x3A, ret, verbose));
 }
 
-bool read_psu_cool_flags_2(uint16_t& ret){
-  return (read_psu_mcu_u16(0x3A, ret));
+bool read_psu_cool_flags_2(uint16_t& ret, bool verbose = true){
+  return (read_psu_mcu_u16(0x3A, ret, verbose));
 }
 
 
-bool read_psu_out_max_amperage(double& ret){
-  return (read_psu_mcu_f16(0x36, 1./128, ret));
+bool read_psu_out_max_amperage(double& ret, bool verbose = true){
+  return (read_psu_mcu_f16(0x36, 1./128, ret, verbose));
 }
 
-bool read_psu_data(){
-  return ((read_psu_grid_voltage(psu_grid_voltage)) &&
-  (read_psu_grid_amperage(psu_grid_amperage)) &&
-  (read_psu_grid_wattage(psu_grid_wattage)) &&
-  (read_psu_out_voltage(psu_out_voltage)) &&
-  (read_psu_out_amperage(psu_out_amperage)) &&
-  (read_psu_out_wattage(psu_out_wattage)) &&
-  (read_psu_intake_temp(psu_intake_temp)) &&
-  (read_psu_internal_temp(psu_internal_temp)) &&
-  (read_psu_fan_speed_actual(psu_fan_speed_actual)) &&
-  (read_psu_fan_speed_desired(psu_fan_speed_desired)));
+
+bool read_psu_is_enabled(bool& ret, bool verbose = true){
+  return ( (read_psu_mcu_flags16(0x02, ret, verbose) & 0x05)  == 0x05);
+}
+
+bool read_psu_data(bool verbose = true){
+  return ((read_psu_grid_voltage(psu_grid_voltage, verbose)) &&
+  (read_psu_grid_amperage(psu_grid_amperage, verbose)) &&
+  (read_psu_grid_wattage(psu_grid_wattage, verbose)) &&
+  (read_psu_out_voltage(psu_out_voltage, verbose)) &&
+  (read_psu_out_amperage(psu_out_amperage, verbose)) &&
+  (read_psu_out_wattage(psu_out_wattage, verbose)) &&
+  (read_psu_intake_temp(psu_intake_temp, verbose)) &&
+  (read_psu_internal_temp(psu_internal_temp, verbose)) &&
+  (read_psu_fan_speed_actual(psu_fan_speed_actual, verbose)) &&
+  (read_psu_fan_speed_desired(psu_fan_speed_desired, verbose)));
 }
 
 uint16_t registers[255];
@@ -1192,16 +1235,16 @@ void read_psu_mcu_changing_registers(){
 
   uint16_t u16 = 0;
   for (uint8_t i=0; i<255;++i){
-    read_psu_mcu_u16(i, u16);
+    read_psu_mcu_u16(i, u16, false);
     registers_old[i] = registers[i];
     registers[i] = u16;
   }
 
   Telnet.println("\033c");
-  read_psu_data();
+  read_psu_data(false);
   print_data();
   for (uint8_t i=0; i<255;++i){
-    if (ignore_registers[i]) continue;
+    //if (ignore_registers[i]) continue;
 
     if (registers[i] != registers_old[i]) {
       registers_last_change_age[i] = 0;
@@ -1246,7 +1289,7 @@ void read_psu_mcu_changing_registers(){
     }
   }
   Telnet.println();
-  
+  /*
   if (test_cmd != 0) {
     Telnet.print("\nTesting command: ");
     print_byte((uint8_t)(test_cmd));
@@ -1255,7 +1298,7 @@ void read_psu_mcu_changing_registers(){
     Telnet.print(" ");
     print_byte((uint8_t)(test_data & 0xFF));
   }
-
+*/
 
 }
 
@@ -1597,7 +1640,7 @@ void setup() {
   Telnet.println(WiFi.localIP());
   Serial.println(WiFi.localIP());
 
-  Wire.begin(D1, D2);  
+  Wire.begin(D2, D1);  
   while (psu_mem_addr == 0xFF){
     Telnet.println("Scanning for EEPROM.");
     scan_for_device(0x50, 0x57, psu_mem_addr);
@@ -1634,6 +1677,7 @@ void my_yield(){
 uint8_t bootdelay = 20;
 void loop() {
   my_yield();
+  read_psu_mcu_changing_registers();
   //scan_for_device(0x58, 0x5F, psu_mcu_addr);
   //Telnet.println('-');
 
@@ -1706,7 +1750,7 @@ void loop() {
 */
 
   
-  
+  /*
   double psu_out_volt;
   double psu_out_amp;
   double psu_out_max_amp;
@@ -1729,8 +1773,8 @@ void loop() {
     Telnet.println("Error reading out voltage and current");
   }
 
-
-
+*/
+/*
   if ((psu_out_max_amp > 30) && (psu_out_amperage < 10)){
     Telnet.println("Resetting max amps");
     
@@ -1743,7 +1787,7 @@ void loop() {
     // write_psu_mcu_u16(0x36, 0); //works by overwriting mem
      read_psu_mcu_u16(0x36, u16);
   }
-
+*/
   //fuzz_for_voltage();
   //search_for_voltage_registers();
   //write_psu_mcu_f16(0x52, 12.5, 1./256.);
