@@ -81,9 +81,11 @@ The EEPROM is writable from the i2c bus.
 ```
 
 # Commands
-The MCU responds to i2c commands/registers. The challenge is to figure out which commands do what. According to http://colintd.blogspot.com/2016/10/hacking-hp-common-slot-power-supplies.html the PSU should be communicating according to the PMbus protocol. With some effort I was able to find some specs of the protocol in datasheets. This one is probably the most readable: https://www.components-mart.com/datasheets/f8/MAX16064ETX-T.pdf. One more detailed here: https://power.murata.com/pub/data/apnotes/acan-51.pdf. However, the register numbers and scaling factors does not correspond to my findings on how the DPS-1200FB responds. 
+The MCU responds to i2c commands/registers. The challenge is to figure out which commands do what. According to http://colintd.blogspot.com/2016/10/hacking-hp-common-slot-power-supplies.html the PSU should be communicating according to the PMbus protocol. Here are some specs: https://www.components-mart.com/datasheets/f8/MAX16064ETX-T.pdf. One more detailed here: https://power.murata.com/pub/data/apnotes/acan-51.pdf. However, the register numbers and scaling factors does not correspond to my findings on how the DPS-1200FB responds. The DPS-1200FB most probably communicates over a propritary protocol.
 
-<checksum goes here>
+
+## Control board
+![CPU Board](https://github.com/slundell/dps_charger/raw/master/doc/images/cpu-board-annotated.png)
 
 # Modifications
 
@@ -93,7 +95,7 @@ The PSU control board gets an 12v feedback signal from the main board. This hoov
 By adjusting the voltage on this pin, the output voltage can be adjusted. I connected a potentiometer between 12VSB, GND and 12VFB (wiper to 12VFB). This allowed me to adjust the voltage from 0.2V up to around 13.7V where the OVP kicks in. Interestingly, UVP did not stop the PSU. I had a halogen bulb connected and measured the voltage on the output terminals to make sure the voltage would stay even under a light load. The PSU I2C reports the actual voltage!
 
 ![12VFB Tap](https://github.com/slundell/dps_charger/raw/master/doc/images/12FB-tap.jpg)
-
+Not only did I learn how to adjust the voltage. I also learned that lead-free solder is almost unusable :)
 ![0.35v](https://github.com/slundell/dps_charger/raw/master/doc/images/0_35v.jpg)
 ![1.94v](https://github.com/slundell/dps_charger/raw/master/doc/images/1_94v.jpg)
 ![4.45v](https://github.com/slundell/dps_charger/raw/master/doc/images/4_45v.jpg)
@@ -113,3 +115,10 @@ A big chunk of the information here is from other sources. Richard Aplins github
 ## colindt
 Colin has documented a lot if information regarding the hardware side of things. He figured out the pin-out and other things.
 (http://colintd.blogspot.com/)
+
+## brettbeauregard
+Brett has made a PID controller library and explains it in great depth in a series of articles. I this to control voltage and current.
+http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/ https://github.com/br3ttb/Arduino-PID-Library
+
+## Philipp Seidel
+Excellent instruction on how to get the PSU started and how to series several PSUs for higher voltage. https://blog.seidel-philipp.de/hp-dps-1200fb-power-supply-hack-for-charging-lipos/
