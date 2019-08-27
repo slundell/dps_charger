@@ -31,6 +31,11 @@ Pinout:
 38: PSALARM
 ```
 
+### 34: Load share
+The load share both both carry and read information. The output voltage is proportional to the output current. It reads information as other PSUs in parallell with it can pull this voltage up or down to signal how much help they want with power delivery. This can be utilized to regulate the current. The load share pin manipulates the output voltage to regulate current. It knows about the OVP limit as it does not increase voltage over that level.
+
+### 36: Status
+3.2V means A-OK, 0V means error.
 
 For a more in-depth look at the different pins' properties: (http://colintd.blogspot.com/2016/10/hacking-hp-common-slot-power-supplies.html)
 
