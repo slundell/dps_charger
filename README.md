@@ -1,3 +1,9 @@
+# Afterthought
+This project turned out to be bigger than I first anticipated. My main aim is still to make a competent battery charger, but a few steps needs to be taken along the way. First, reverse engineering and documentation. Currently most of the documentation is in this readme. I have started a KiCAD project to document the circuits of the CPU board in doc/kicad/. High resolution images of the CPU board is available here and in doc/images/. This can be used for reverse engineering the circuitry. 
+
+The i2c reverse engineering is done with an ESP8266 using various methods and experiments. Code is in `src/dps_re.cpp`. The charger project is split up in two approaches. An analogue charger that is based on the ESP32 interfacing through `12VFB` and `LOAD_SHARE` etc. A digital one based on i2c interfacing using an ESP8266. The ESP32 seems to have issues with i2c stability, and the ESP8266 have limited analogue interfaces.
+
+
 # Background
 The DPS-1200FB is a very powerful and compact powersupply. It can supply up to 100A adjustable between 11.8v-12.8v. This is perfect for supplying high currents to 12v equipment like your boat fridge etc. It won't, however, charge any 12v lead-acid or lithium batteries. You would need 14.4v (lead acid) or 14.6v (lithium) to get a full charge. There are some mods floating around on the interwebs on how to increase voltage, how to series connect two PSUs and how to amputate the Over Voltage Protection (OVP). 
 
