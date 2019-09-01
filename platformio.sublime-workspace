@@ -1,0 +1,1858 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"PSU",
+				"PSU_VOLTAGE_CONTROL_MAX"
+			],
+			[
+				"displ",
+				"update_display"
+			],
+			[
+				"creg",
+				"creg_duty"
+			],
+			[
+				"MAX",
+				"PSU_VOLTAGE_CONTROL_MAX"
+			],
+			[
+				"psu_",
+				"psu_out_current"
+			],
+			[
+				"battery",
+				"battery_voltage"
+			],
+			[
+				"setText",
+				"setTextColor"
+			],
+			[
+				"display",
+				"display_print"
+			],
+			[
+				"uin",
+				"uint16_t"
+			],
+			[
+				"displa",
+				"display_text_row"
+			],
+			[
+				"dis",
+				"display_text_row"
+			],
+			[
+				"display_te",
+				"display_text_row"
+			],
+			[
+				"text",
+				"text_height"
+			],
+			[
+				"disl",
+				"display_width"
+			],
+			[
+				"get_psu",
+				"get_psu_out_voltage"
+			],
+			[
+				"lolin",
+				"lolin_d1_mini"
+			],
+			[
+				"upload_",
+				"upload_port"
+			],
+			[
+				"scan",
+				"scanNetworks"
+			],
+			[
+				"INP",
+				"INPUT"
+			],
+			[
+				"INPUT",
+				"INPUT_PULLDOWN"
+			],
+			[
+				"psu_vol",
+				"psu_out_voltage"
+			],
+			[
+				"analog",
+				"analogWrite\tDeviot analogWrite"
+			],
+			[
+				"regu",
+				"regulate_voltage"
+			],
+			[
+				"psu_out_curr",
+				"psu_out_current_filtered"
+			],
+			[
+				"psu_out_",
+				"psu_out_current"
+			],
+			[
+				"voltage",
+				"desired_voltage"
+			],
+			[
+				"IN",
+				"INPUT_PULLUP"
+			],
+			[
+				"INPUT_",
+				"INPUT_PULLUP"
+			],
+			[
+				"VOLTAGE_",
+				"PSU_VOLTAGE_PIN"
+			],
+			[
+				"anal",
+				"analogWrite\tDeviot analogWrite"
+			],
+			[
+				"psu_out",
+				"psu_out_voltage"
+			],
+			[
+				"charger_",
+				"charger_state_type"
+			],
+			[
+				"charger_stat",
+				"charger_state_prev"
+			],
+			[
+				"digital",
+				"digitalRead\tDeviot digitalRead"
+			],
+			[
+				"BUTTON_",
+				"BUTTON_A_PIN"
+			],
+			[
+				"Display",
+				"display_log"
+			],
+			[
+				"uint",
+				"uint16_t"
+			],
+			[
+				"read_psu_",
+				"read_psu_mcu_u16"
+			],
+			[
+				"psu_ad",
+				"psu_mcu_addr"
+			],
+			[
+				"fuzz",
+				"fuzz_for_voltage"
+			],
+			[
+				"fetch",
+				"fetchByteEEPROM"
+			],
+			[
+				"read_eeprom_",
+				"read_eeprom_byte"
+			],
+			[
+				"eeprom_l",
+				"eeprom_last_change_age"
+			],
+			[
+				"write_psu",
+				"write_psu_mcu_f16"
+			],
+			[
+				"write_psu_",
+				"write_psu_mcu_u16"
+			],
+			[
+				"psu_fan",
+				"psu_fan_speed_actual"
+			],
+			[
+				"read_psu_c",
+				"read_psu_mcu_registers_init"
+			],
+			[
+				"registers_",
+				"registers_last_change_age"
+			],
+			[
+				"read_mcu",
+				"read_psu_mcu_all"
+			],
+			[
+				"read_psu_mc",
+				"read_psu_mcu_f16"
+			],
+			[
+				"read_psu_out_",
+				"read_psu_out_amperage"
+			],
+			[
+				"read_psu_out",
+				"read_psu_out_voltage"
+			],
+			[
+				"actual",
+				"actual_fan_speed"
+			],
+			[
+				"read_psu",
+				"read_psu_mcu_f16"
+			],
+			[
+				"read_psu_mcu",
+				"read_psu_mcu_u16"
+			],
+			[
+				"rpm_",
+				"rpm_lsb"
+			],
+			[
+				"rpm",
+				"rpm_msb"
+			],
+			[
+				"read_eeprom",
+				"read_eeprom_byte"
+			],
+			[
+				"space",
+				"space_avail"
+			],
+			[
+				"MAX_",
+				"MAX_SAMPLES_PER_REV"
+			],
+			[
+				"transm",
+				"transmission-remote"
+			],
+			[
+				"accept",
+				"accept_all"
+			],
+			[
+				"target",
+				"target_name"
+			],
+			[
+				"video",
+				"video_name"
+			],
+			[
+				"model",
+				"model_dir"
+			],
+			[
+				"default",
+				"default_mode"
+			],
+			[
+				"exist",
+				"exist_ok"
+			],
+			[
+				"aligned",
+				"aligned_dir"
+			],
+			[
+				"frames",
+				"frames_dir"
+			],
+			[
+				"load_",
+				"load_ignore"
+			],
+			[
+				"Karls",
+				"Karlsvard"
+			],
+			[
+				"peer",
+				"peer_type"
+			],
+			[
+				"client",
+				"client_type"
+			],
+			[
+				"to",
+				"toDS"
+			],
+			[
+				"frame",
+				"frameSubType"
+			],
+			[
+				"from",
+				"fromDS"
+			],
+			[
+				"TYPE",
+				"TYPE_CONTROL_SUBTYPE_BLOCKACK_REQ"
+			],
+			[
+				"T",
+				"TYPE_MANAGEMENT_SUBTYPE_BEACON"
+			],
+			[
+				"fra",
+				"frameType"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"arp",
+				"arp_cache"
+			],
+			[
+				"vendor",
+				"vendor_comment"
+			],
+			[
+				"prettyprint",
+				"prettyprint_QoS"
+			],
+			[
+				"ikea_sparsnas",
+				"ikea_sparsnas_sender_id"
+			],
+			[
+				"batter",
+				"battery_enc"
+			],
+			[
+				"enc",
+				"enc_key_int"
+			],
+			[
+				"act",
+				"actual_key_shuffled"
+			],
+			[
+				"IKEA_spar",
+				"IKEA_SPARSNAS_SENSOR_ID"
+			],
+			[
+				"uns",
+				"unshuffle"
+			],
+			[
+				"sens",
+				"sensor_id"
+			],
+			[
+				"test",
+				"testidu64"
+			],
+			[
+				"xor",
+				"xor_key_from_sensor_id"
+			],
+			[
+				"sensor_id",
+				"sensor_id_from_xor_key"
+			],
+			[
+				"unsh",
+				"unshuffle_u32"
+			],
+			[
+				"xor_",
+				"xor_key_from_sensor_id"
+			],
+			[
+				"dec_xor",
+				"dec_xor_key_done"
+			],
+			[
+				"sender",
+				"sender_id"
+			],
+			[
+				"dec_x",
+				"dec_xor_key_shuffled"
+			],
+			[
+				"dec_sens",
+				"dec_sensor_id_sub"
+			],
+			[
+				"IKEA",
+				"IKEA_SPARSNAS_ID_KEY_SUB"
+			],
+			[
+				"key",
+				"key_sensor_id"
+			],
+			[
+				"pulses",
+				"pulses_per_kwh"
+			],
+			[
+				"rec",
+				"rcv_sensor_id"
+			],
+			[
+				"IKEA_SPARS",
+				"IKEA_SPARSNAS_PULSES_PER_KWH"
+			],
+			[
+				"sequence",
+				"sequence_number"
+			],
+			[
+				"IKE_",
+				"IKEA_SPARSNAS_SENSOR_ID"
+			],
+			[
+				"crc",
+				"crc_calculated"
+			],
+			[
+				"ikea",
+				"ikea_sparsnas_crc16"
+			],
+			[
+				"IKEA_SPAR",
+				"IKEA_SPARSNAS_PREAMBLE_BITLEN"
+			],
+			[
+				"ikea_spa",
+				"ikea_sparsnas_callback"
+			],
+			[
+				"if",
+				"influx"
+			],
+			[
+				"files_",
+				"files_jsondb"
+			],
+			[
+				"best",
+				"best_baud"
+			],
+			[
+				"match",
+				"matches"
+			],
+			[
+				"mat",
+				"matches"
+			],
+			[
+				"data",
+				"datakwh"
+			],
+			[
+				"error",
+				"error_sum_count"
+			],
+			[
+				"NU",
+				"NUM_ONESHOT_CMDS"
+			],
+			[
+				"Ar",
+				"ArduinoOTA"
+			],
+			[
+				"next",
+				"nextIsHeader"
+			],
+			[
+				"Tel",
+				"Telnet"
+			],
+			[
+				"ge",
+				"GetVersion"
+			],
+			[
+				"setup",
+				"setup_wifi"
+			],
+			[
+				"MQTT_P",
+				"MQTT_PUB_TOPIC"
+			],
+			[
+				"handle",
+				"handleTelnet"
+			],
+			[
+				"buffer",
+				"bufferLocation"
+			],
+			[
+				"thin",
+				"thing_name"
+			],
+			[
+				"blur-",
+				"blur-mask-modifier"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "platformio.ini",
+			"settings":
+			{
+				"buffer_size": 2342,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/tests.cpp",
+			"settings":
+			{
+				"buffer_size": 1008,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/dps_charger_analogue.cpp",
+			"settings":
+			{
+				"buffer_size": 17756,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".pio/libdeps/lolin_d32_pro/PrintEx_ID651/src/lib/PrintVariadic.h",
+			"settings":
+			{
+				"buffer_size": 1998,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".pio/libdeps/lolin_d32_pro/PrintEx_ID651/src/lib/TypeTraits.h",
+			"settings":
+			{
+				"buffer_size": 10787,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/dps_charger_digital.cpp",
+			"settings":
+			{
+				"buffer_size": 21923,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "platformio.sublime-project",
+			"settings":
+			{
+				"buffer_size": 2127,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/dps_re.cpp",
+			"settings":
+			{
+				"buffer_size": 55531,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/i2c_scanner.cpp",
+			"settings":
+			{
+				"buffer_size": 1882,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "PlatformIO Upload",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"PlatformIO Upload",
+					""
+				],
+				[
+					"PlatformIO Upload",
+					"Build"
+				],
+				[
+					"PlatformIO Upload",
+					"Upload"
+				],
+				[
+					"PlatformIO Upload",
+					"Clean"
+				],
+				[
+					"PlatformIO Upload",
+					"Test"
+				],
+				[
+					"PlatformIO Upload",
+					"Upload using Programmer"
+				],
+				[
+					"PlatformIO Upload",
+					"Upload SPIFFS image"
+				],
+				[
+					"PlatformIO Upload",
+					"Update platforms and libraries"
+				],
+				[
+					"PlatformIO Upload",
+					"Upgrade PlatformIO Core"
+				]
+			],
+			[
+				"PlatformIO Upload",
+				"Upload"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 38.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"packages up",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"Deviot: platfo",
+				"Deviot: Upgrade PlatformIO"
+			],
+			[
+				"",
+				"Changelog"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Deviot: ",
+				"Deviot: Remove Library"
+			],
+			[
+				"Package Control: up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"platformio",
+				"Deviot: platformio.ini Untouch"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"package control",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Contpackage",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 591.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/src/dps",
+		"/C/src/dps/src"
+	],
+	"file_history":
+	[
+		"/C/src/dps/dps_charger_analogue.cpp",
+		"/C/src/dps/src/dps_charger.cpp",
+		"/C/src/i2c_scanner/i2c_scanner.cpp",
+		"/C/src/dps_charger/platformio.sublime-project",
+		"/C/src/i2c_scanner/platformio.ini",
+		"/C/src/BH1750FVI_Simple/BH1750FVI_Simple.ino",
+		"/C/src/dps_charger/platformio.sublime-workspace",
+		"/C/src/dps_charger/pio_d32pro.sublime-build",
+		"/C/Users/slund/Downloads/quickbutik-bestallningar (1).csv",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/examples/BasicOTA/BasicOTA.ino",
+		"/C/Users/slund/AppData/Local/Temp/Deviot/BasicOTA/platformio.ini",
+		"/C/Users/slund/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/RoamingState/profiles.json",
+		"/C/src/dps_charger/re/dps_re.ino",
+		"/C/src/dps_charger/src/main.cpp",
+		"/C/src/dps_charger/include/wifi-config.h",
+		"/C/src/dps_charger_prepio/dps_charger.ino",
+		"/C/src/dps_charger/platformio.ini",
+		"/C/Users/slund/AppData/Local/Temp/Deviot/dps_charger/platformio.ini",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/examples/ChipID/GetChipID/GetChipID.ino",
+		"//vindens.konvaljevagen/home/src/PSU-CRC/DPS-1200FB.py",
+		"/C/src/dps_charger_prepio/re/dps_re.ino",
+		"/C/Users/slund/AppData/Local/Temp/Deviot/dps_charger/.pio/libdeps/d1_mini/PID_ID2/PID_v1.h",
+		"/C/Users/slund/AppData/Local/Temp/Deviot/dps_charger/.pio/libdeps/d1_mini/PID_ID2/PID_v1.cpp",
+		"/C/src/dps_charger/src/dps_charger.cpp",
+		"/C/src/dps_charger/.gitignore",
+		"/C/src/dps_charger/ (2).gitignore",
+		"/C/src/dps_charger/lib/README",
+		"/C/src/dps_charger/libraries/ESP8266_new_pwm/pwm.c",
+		"//vindens.konvaljevagen/home/pwm_v.csv",
+		"//vindens.konvaljevagen/home/voltlog.txt",
+		"//openhab.konvaljevagen/pi/pwm_pwm.txt",
+		"//openhab.konvaljevagen/pi/pwm_volt.txt",
+		"/C/Users/slund/Desktop/kappisar/dokument/adresser/quickbutik-bestallningar.csv",
+		"/M/nedladdat/manuella/IDA Pro 7.0 FULL Incl Hex-Rays Decompilers Win & Mac OSX [Ny2rogen]/Windows/Readme.txt",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/cores/esp8266/twi_util.h",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/cores/esp8266/Arduino.h",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/cores/esp8266/twi.h",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/libraries/Wire/Wire.cpp",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/libraries/Wire/Wire.h",
+		"/C/src/PackProbe/PackProbe/PackProbe.ino",
+		"/C/src/dps_charger/libraries/LOLIN_OLED_I2C_Button_Library-master/src/LOLIN_I2C_BUTTON.h",
+		"/C/src/dps_charger/libraries/LOLIN_OLED_I2C_Button_Library-master/src/LOLIN_I2C_BUTTON.cpp",
+		"/C/src/dps_charger/libraries/LOLIN_OLED_I2C_Button_Library-master/examples/button_with_OLED/button_with_OLED.ino",
+		"/C/src/dps_charger/dps_re.ino",
+		"/C/src/dps_charger/doc/asm/DPS1200-FB-pic_16F886_firmware.asm",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/cores/esp8266/core_esp8266_si2c.cpp",
+		"/C/src/dps_charger/stassid.h",
+		"/C/Users/slund/AppData/Local/Temp/Deviot/PackProbe/platformio.ini",
+		"/C/Users/slund/.platformio/lib/SlowSoftI2CMaster/SlowSoftI2CMaster.cpp",
+		"/C/Users/slund/.platformio/lib/SlowSoftI2CMaster/SlowSoftI2CMaster.h",
+		"/C/Users/slund/Documents/GBS20Ah-nr44-clamped-2.csv",
+		"/C/src/SlowSoftI2CMaster/SlowSoftI2CMaster.cpp",
+		"/C/src/SlowSoftI2CMaster/SlowSoftI2CMaster.h",
+		"/C/src/PackProbe/PackProbe/SlowSoftI2CMaster.h",
+		"/C/src/PackProbe/PackProbe/SlowSoftI2CMaster.ino",
+		"/C/Users/slund/AppData/Local/Temp/Deviot/dps_charger/include/README",
+		"/C/Users/slund/.platformio/lib/I2Cdevlib-Core_ID11/I2Cdev.cpp",
+		"/C/Users/slund/.platformio/lib/I2Cdevlib-Core_ID11/I2Cdev.h",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/libraries/Wire/examples/slave_sender/slave_sender.ino",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/libraries/Wire/examples/slave_receiver/slave_receiver.ino",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/libraries/Wire/examples/master_writer/master_writer.ino",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/libraries/Wire/examples/master_reader/master_reader.ino",
+		"/C/Users/slund/AppData/Local/Temp/Deviot/dps-charger/platformio.ini",
+		"/C/src/dps-charger/dps-charger.ino",
+		"/C/src/neato-mqtt/I8Beef.Neato.Mqtt-master/src/I8Beef.Neato.Mqtt/I8Beef.Neato.Mqtt.ino",
+		"/C/Users/slund/.platformio/lib/I2Cdevlib-MPU6050_ID107/MPU6050.h",
+		"/C/Users/slund/.platformio/lib/ArduinoOTA_ID6178/examples/WiFi101_OTA/WiFi101_OTA.ino",
+		"/C/src/dps-charger/stassid.h",
+		"/C/Users/slund/.platformio/lib/I2Cdevlib-MPU6050_ID107/helper_3dmath.h",
+		"/C/src/balancer/balancer.ino",
+		"/C/src/ambient_light_mqtt/ambient_light_mqtt.ino",
+		"//openhab.konvaljevagen/pi/src/scripts/calc_freq.py",
+		"//openhab.konvaljevagen/pi/src/scripts/upgrade-oh2.sh",
+		"//openhab.konvaljevagen/pi/src/scripts/all-the-rtls.sh",
+		"/C/Users/slund/.platformio/lib/ArduinoOTA_ID6178/.library.json",
+		"/C/Users/slund/.platformio/lib/PubSubClient_ID89/examples/mqtt_esp8266/mqtt_esp8266.ino",
+		"/C/Users/slund/.platformio/lib/BH1750_ID439/BH1750.h",
+		"/C/Users/slund/.platformio/lib/BH1750_ID439/BH1750.cpp",
+		"/C/Users/slund/.platformio/lib/Ticker_ID1586/Ticker.h",
+		"/C/src/balancer/calibration/calibrate.ino",
+		"//openhab.konvaljevagen/pi/src/scripts/backup-all.sh",
+		"/C/Users/slund/Downloads/dps1200fbfancontrolV4.ino",
+		"/C/Users/slund/.platformio/lib/I2Cdevlib-MPU6050_ID107/MPU6050_6Axis_MotionApps20.h",
+		"/C/Users/slund/.platformio/lib/I2Cdevlib-MPU6050_ID107/examples/MPU6050_DMP6/MPU6050_DMP6.ino",
+		"/C/Users/slund/.platformio/lib/BH1750_ID439/examples/BH1750test/BH1750test.ino",
+		"/C/Users/slund/.platformio/lib/BH1750_ID439/library.json",
+		"/C/Users/slund/.platformio/lib/BH1750_ID439/keywords.txt",
+		"/C/Users/slund/.platformio/lib/TimerOne_ID131/TimerOne.h",
+		"/C/Users/slund/.platformio/lib/I2Cdevlib-MPU6050_ID107/examples/MPU6050_raw/MPU6050_raw.ino",
+		"/C/Users/slund/.platformio/lib/I2Cdevlib-MPU6050_ID107/examples/IMU_Zero/IMU_Zero.ino",
+		"/C/Users/slund/.platformio/lib/I2Cdevlib-MPU6050_ID107/examples/MPU6050_DMP6_ESPWiFi/MPU6050_DMP6_ESPWiFi.ino",
+		"/E/slask/plottest.ino",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/examples/BasicHttpClient/BasicHttpClient.ino",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/libraries/esp8266/examples/CheckFlashConfig/CheckFlashConfig.ino",
+		"/C/Users/slund/.platformio/lib/Plotly-WiFi_ID49/plotly_streaming_wifi.h",
+		"/C/Users/slund/.platformio/lib/Plotly-WiFi_ID49/plotly_streaming_wifi.cpp",
+		"/C/Users/slund/.platformio/lib/ThingSpeak_ID550/examples/ESP8266/program board directly/WriteMultipleFields/WriteMultipleFields.ino",
+		"/C/Users/slund/.platformio/lib/ThingSpeak_ID550/examples/ESP8266/program board directly/WriteSingleField/WriteSingleField.ino",
+		"/C/Users/slund/.platformio/lib/ThingSpeak_ID550/README.md",
+		"/C/Users/slund/.platformio/lib/plotly_ID4418/library.json",
+		"/C/Users/slund/.platformio/lib/Plotly-WiFi_ID49/library.json",
+		"/C/Users/slund/.platformio/packages/framework-arduinoespressif8266/libraries/esp8266/examples/Blink/Blink.ino",
+		"//10.0.0.41/openHAB-userdata/jsondb/thing_status_storage - kopia.json",
+		"/F/System Volume Information/WPSettings.dat",
+		"/F/System Volume Information/IndexerVolumeGuid",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0381064.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0381234.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0381505.java",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0436874.gz",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0381936.gz",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0437897.h",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0437376.html",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0444879.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0444872.java",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0444917.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0444906.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0445153.java",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0447462.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0447571.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0447769.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0447776.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0448189.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0448423.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0448435.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0448432.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0448859.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0448853.txt",
+		"/M/sdh/sdh2_rec/recup_dir.2/f0451744.h"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 148.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"psu_en",
+			"\");",
+			"printf",
+			"debugI",
+			"ANALOG_FREQ_RANGE",
+			"HIGH",
+			"cr",
+			"psu_out_current",
+			"psu_out_",
+			"battery",
+			"BATTERY",
+			"battery",
+			"battery_",
+			" 2",
+			"psu_out_",
+			"BATTERY",
+			"battery",
+			"adcEnd",
+			"PSU_OUT_VOLTAGE_PIN",
+			"psu_out_voltage",
+			"PSU_VOLTAGE_PIN",
+			"OUTPUT",
+			"ILI9341_BLACK",
+			"display_text",
+			"14",
+			"yellow",
+			"blue",
+			"d",
+			"double",
+			"display.print",
+			"tft",
+			"fill",
+			"setTextColor",
+			"text_width",
+			"psu_out_current",
+			":",
+			"connecting",
+			"Telnet",
+			"telnet",
+			"tests",
+			"=+",
+			"reconn",
+			"Org_01",
+			"display",
+			"printex::",
+			"printex",
+			"debugI",
+			"StreamEx",
+			"printex",
+			"display.display();",
+			"clearDisplay",
+			"white",
+			"ILI9341_GREEN",
+			"WHITE",
+			"desired",
+			"psu_out",
+			"\\",
+			"file_regex",
+			"keyfiles",
+			"charger",
+			"psu_out_voltage",
+			"rdebug",
+			"printex",
+			"\n",
+			"tft",
+			"ts",
+			"&gt;",
+			"&lt;",
+			"debug",
+			"debugI",
+			"Serial",
+			"LOCAL_SSID",
+			"esp",
+			";\n;",
+			"; ",
+			"stassid",
+			"  ;",
+			"\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "platformio.ini",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2342,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								590,
+								590
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/INI/INI.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/tests.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1008,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								846,
+								790
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/dps_charger_analogue.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17756,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8076,
+								8076
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4176.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".pio/libdeps/lolin_d32_pro/PrintEx_ID651/src/lib/PrintVariadic.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1998,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1428,
+								1440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": ".pio/libdeps/lolin_d32_pro/PrintEx_ID651/src/lib/TypeTraits.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3821,
+								3821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 518.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/dps_charger_digital.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "platformio.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2127,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288,
+								288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/dps_re.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 55531,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30612,
+								30361
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11866.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/i2c_scanner.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1882,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								267,
+								267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 104.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 166.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 210.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "PlatformIO Upload",
+	"project": "platformio.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"platformio.sublime-project"
+			],
+			[
+				"clea",
+				"\\\\vindens\\home\\clean_incomplete.sh"
+			],
+			[
+				"clean",
+				"\\\\vindens\\home\\clean_incomplete.sh"
+			],
+			[
+				"CLEA",
+				"\\\\vindens\\home\\clean_incomplete.sh"
+			],
+			[
+				"train",
+				"train-background.sh"
+			],
+			[
+				"conv",
+				"convert-background.sh"
+			],
+			[
+				"con",
+				"convert-background.sh"
+			],
+			[
+				"extra",
+				"mainscripts\\Extractor.py"
+			],
+			[
+				"bac",
+				"convert-background.sh"
+			],
+			[
+				"back",
+				"convert-background.sh"
+			],
+			[
+				"ip",
+				"C:\\Users\\slund\\Documents\\ip plan.txt"
+			],
+			[
+				"moni",
+				"\\\\10.0.0.41\\pi\\src\\wifi-presence\\python\\monitor.py"
+			],
+			[
+				"ignore",
+				"\\\\10.0.0.41\\pi\\src\\wifi-presence\\user-data\\ignore.json"
+			],
+			[
+				"monit",
+				"\\\\10.0.0.41\\pi\\src\\wifi-presence\\python\\monitor.py"
+			],
+			[
+				"all",
+				"P:\\all-the-rtls.sh"
+			],
+			[
+				"ino",
+				"C:\\src\\neato-mqtt\\I8Beef.Neato.Mqtt-master\\src\\I8Beef.Neato.Mqtt\\I8Beef.Neato.Mqtt.ino"
+			],
+			[
+				"sniff",
+				"C:\\src\\Sniffing6\\Notes.h"
+			],
+			[
+				"prese",
+				"O:\\src\\presence\\presence.sh"
+			],
+			[
+				"pulse",
+				"O:\\src\\rtl_433-slundell\\include\\pulse_detect.h"
+			],
+			[
+				"json",
+				"O:\\hosts.json"
+			],
+			[
+				"moin",
+				"\\\\openhab\\pi\\macsniffer\\monitor.py"
+			],
+			[
+				".ino",
+				"C:\\src\\neato-mqtt\\I8Beef.Neato.Mqtt-master\\src\\I8Beef.Neato.Mqtt\\I8Beef.Neato.Mqtt.ino"
+			],
+			[
+				"main",
+				"C:\\src\\esp8266-sniffer-master\\src\\main.ino"
+			],
+			[
+				"main.",
+				"\\\\openhab\\pi\\macsniffer\\monitor.py"
+			],
+			[
+				"ikea",
+				"O:\\src\\rtl_433-slundell\\src\\devices\\ikea_sparsnas.c"
+			],
+			[
+				"ford",
+				"O:\\src\\rtl_433-slundell\\src\\devices\\fordremote.c"
+			],
+			[
+				"p",
+				"O:\\src\\rtl_433\\include\\pulse_detect.h"
+			],
+			[
+				"al",
+				"\\\\openhab\\pi\\all-the-rtls.sh"
+			],
+			[
+				"spar",
+				"\\\\openhab\\pi\\sparsnas_decoder\\sparsnas_decode.cpp"
+			],
+			[
+				"spars",
+				"\\\\openhab\\pi\\sparsnas_decoder\\sparsnas_decode.cpp"
+			],
+			[
+				"mod",
+				"O:\\src\\rtl_433\\src\\pulse_demod.c"
+			],
+			[
+				"sear",
+				"O:\\src\\rtl_433_tests\\search.sh"
+			],
+			[
+				"X",
+				"-X 'n=name,m=FSK_PCM,s=48,l=48,r=49152'"
+			],
+			[
+				"fre",
+				"\\\\openhab\\openHAB-userdata\\sparsnas\\617633.freq"
+			],
+			[
+				"cli",
+				"faceswap-staging\\lib\\cli.py"
+			],
+			[
+				"train.py",
+				"faceswap-staging\\scripts\\train.py"
+			],
+			[
+				"original",
+				"faceswap-staging\\plugins\\Model_OriginalHighRes\\Model.py"
+			],
+			[
+				"images",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\swap-images-background.sh"
+			],
+			[
+				"videos",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\swap-videos-background.sh"
+			],
+			[
+				"model",
+				"faceswap-staging\\plugins\\Model_OriginalHighRes\\Model.py"
+			],
+			[
+				"tr",
+				"faceswap-staging\\lib\\training_data.py"
+			],
+			[
+				"trainer",
+				"faceswap-staging\\plugins\\Model_OriginalHighRes\\Trainer.py"
+			],
+			[
+				"test",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\test-swap-settings.sh"
+			],
+			[
+				"training",
+				"faceswap-staging\\lib\\training_data.py"
+			],
+			[
+				"model.",
+				"faceswap-staging\\plugins\\Model_OriginalHighRes\\Model.py"
+			],
+			[
+				"swa",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\swap-videos-background.sh"
+			],
+			[
+				"extr",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\extract-faces-background.sh"
+			],
+			[
+				"swap",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\swap-videos-background.sh"
+			],
+			[
+				"gan model",
+				"faceswap-staging\\plugins\\Model_GAN\\Model.py"
+			],
+			[
+				"high",
+				"faceswap-staging\\plugins\\Model_OriginalHighRes\\Model.py"
+			],
+			[
+				"tra",
+				"faceswap-staging\\scripts\\train.py"
+			],
+			[
+				"auto",
+				"faceswap-staging\\plugins\\Model_IAE\\AutoEncoder.py"
+			],
+			[
+				"utils",
+				"lib\\utils.py"
+			],
+			[
+				"autoen",
+				"plugins\\Model_IAE\\AutoEncoder.py"
+			],
+			[
+				"gan",
+				"plugins\\Model_GAN128\\Trainer.py"
+			],
+			[
+				"make",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\faceswap-GAN\\make-fake.py"
+			],
+			[
+				"a",
+				"C:\\projekt\\Cura\\plugins\\USBPrinting\\AutoDetectBaudJob.py"
+			],
+			[
+				"baud",
+				"C:\\projekt\\Cura\\plugins\\USBPrinting\\AutoDetectBaudJob.py"
+			],
+			[
+				"au",
+				"C:\\projekt\\Cura\\plugins\\USBPrinting\\AutoDetectBaudJob.py"
+			],
+			[
+				"de",
+				"C:\\projekt\\Cura\\plugins\\USBPrinting\\USBPrinterOutputDevice.py"
+			],
+			[
+				"ini",
+				"C:\\projekt\\Ultimaker Cura 3.2\\plugins\\USBPrinting\\__init__.py"
+			],
+			[
+				"usb",
+				"C:\\Program Files\\Ultimaker Cura 3.2\\plugins\\USBPrinting\\USBPrinterOutputDevice.py"
+			],
+			[
+				"config",
+				"F:\\config.txt"
+			],
+			[
+				"on",
+				"F:\\on_boot.gcode"
+			],
+			[
+				"over",
+				"F:\\config-override"
+			],
+			[
+				"conf",
+				"F:\\config.txt"
+			],
+			[
+				"yml",
+				"roles\\miner\\tasks\\main.yml"
+			],
+			[
+				"ae",
+				"faceswap\\lib\\ModelAE.py"
+			],
+			[
+				"ori",
+				"faceswap\\plugins\\Model_Original.py"
+			],
+			[
+				"modelo",
+				"faceswap\\plugins\\Model_Original.py"
+			],
+			[
+				"modela",
+				"faceswap\\lib\\ModelAE.py"
+			],
+			[
+				"mode",
+				"faceswap\\plugins\\Model_GAN\\Model.py"
+			],
+			[
+				"training_da",
+				"faceswap\\lib\\training_data.py"
+			],
+			[
+				"trainingd",
+				"faceswap\\lib\\training_data.py"
+			],
+			[
+				"lowmem",
+				"faceswap\\plugins\\Model_LowMem.py"
+			],
+			[
+				"modelae",
+				"faceswap\\lib\\ModelAE.py"
+			],
+			[
+				"training_",
+				"faceswap\\lib\\training_data.py"
+			],
+			[
+				"tf",
+				"build\\ansible\\roles\\cuda\\tasks\\install-tf-from-source.yml"
+			],
+			[
+				"ext",
+				"faceswap\\scripts\\extract.py"
+			],
+			[
+				"train.",
+				"faceswap-clorr\\scripts\\train.py"
+			],
+			[
+				"ut",
+				"faceswap-GAN\\lib\\utils.py"
+			],
+			[
+				"conver",
+				"scripts\\convert.py"
+			],
+			[
+				"ansib",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\build\\ansible\\roles\\cuda\\tasks\\install-tf-from-source.yml"
+			],
+			[
+				"cuda",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\build\\ansible\\roles\\cuda\\tasks\\main.yml"
+			],
+			[
+				"ins",
+				"M:\\nedladdat\\m\\ai\\deepfakes\\build\\ansible\\roles\\cuda\\tasks\\install-tf-from-source.yml"
+			],
+			[
+				"mine",
+				"\\\\10.0.0.4\\opt\\mining\\mine.sh"
+			],
+			[
+				"param",
+				"trader\\parameters.py"
+			],
+			[
+				"ppot",
+				"trader\\ppotradeagent.py"
+			],
+			[
+				"tensorf",
+				"trader\\tensorforcetradeagent.py"
+			],
+			[
+				"parameter",
+				"trader\\parameters.py"
+			],
+			[
+				"ppo",
+				"trader\\packages\\tensorforce\\tensorforce\\agents\\ppo_agent.py"
+			],
+			[
+				"parame",
+				"trader\\parameters.py"
+			],
+			[
+				"agenttester",
+				"trader\\agenttester.py"
+			],
+			[
+				"miner",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\roles\\miner\\tasks\\main.yml"
+			],
+			[
+				"basic",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\roles\\basic\\tasks\\main.yml"
+			],
+			[
+				"playb",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\playbook.yml"
+			],
+			[
+				"invento",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\inventory.yml"
+			],
+			[
+				"amdgp",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\roles\\amdgpu\\tasks\\main.yml"
+			],
+			[
+				"play",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\playbook.yml"
+			],
+			[
+				"invent",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\inventory.yml"
+			],
+			[
+				"amdgpu",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\roles\\amdgpu\\tasks\\main.yml"
+			],
+			[
+				"pla",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\playbook.yml"
+			],
+			[
+				"inventor",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\inventory.yml"
+			],
+			[
+				"rc.l",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\files\\rc.local"
+			],
+			[
+				"basicmain",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\roles\\basic\\tasks\\main.yml"
+			],
+			[
+				"mine.s",
+				"\\\\10.0.0.4\\opt\\mining\\mine.sh"
+			],
+			[
+				"minertas",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\roles\\miner\\tasks\\main.yml"
+			],
+			[
+				"rc.loc",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\roles\\miner\\rc.local"
+			],
+			[
+				"t",
+				"trader\\tensorforcetradeagent.py"
+			],
+			[
+				"runner.p",
+				"trader\\packages\\tensorforce\\tensorforce\\execution\\runner.py"
+			],
+			[
+				"main.yml",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\roles\\basic\\main.yml"
+			],
+			[
+				"inventory",
+				"\\\\10.0.0.4\\opt\\mining\\setup\\ansible\\inventory.yml"
+			],
+			[
+				"agenttest",
+				"trader\\agenttester.py"
+			],
+			[
+				"te",
+				"trader\\tensorforcetradeagent.py"
+			],
+			[
+				"runner",
+				"trader\\packages\\tensorforce\\tensorforce\\execution\\runner.py"
+			],
+			[
+				"agent",
+				"trader\\packages\\tensorforce\\tensorforce\\agents\\agent.py"
+			],
+			[
+				"exchange",
+				"trader\\exchange.py"
+			],
+			[
+				"rewarder",
+				"trader\\rewarders.py"
+			],
+			[
+				"agentte",
+				"trader\\agenttester.py"
+			],
+			[
+				"basel",
+				"trader\\packages\\tensorforce\\tensorforce\\core\\baselines\\baseline.py"
+			],
+			[
+				"exc",
+				"trader\\exchange.py"
+			],
+			[
+				"exper",
+				"trader\\experiment.py"
+			],
+			[
+				"ex",
+				"trader\\exchange.py"
+			],
+			[
+				"excha",
+				"trader\\exchange.py"
+			],
+			[
+				"paramet",
+				"trader\\parameters.py"
+			],
+			[
+				"agenttes",
+				"trader\\agenttester.py"
+			],
+			[
+				"filein",
+				"trader\\agentfileinspector.py"
+			],
+			[
+				"in",
+				"build\\ansible\\inventory.yml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
